@@ -29,7 +29,7 @@ public class EventController {
     }
 
     @PostMapping("/{eventId}/tickets")
-    public ResponseEntity<EventTicketResponse> createEventTicket(@PathVariable final Long eventId) {
+    public ResponseEntity<EventTicketResponse> createEventTicket(@PathVariable final Long eventId) throws Exception {
         EventTicketResponse response = eventService.createEventTicket(eventId);
 
         return ResponseEntity
