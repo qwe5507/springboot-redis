@@ -30,7 +30,7 @@ public class EventController {
 
     @PostMapping("/{eventId}/tickets")
     public ResponseEntity<EventTicketResponse> createEventTicket(@PathVariable final Long eventId) throws Exception {
-        EventTicketResponse response = eventService.createEventTicket(eventId);
+        EventTicketResponse response = eventService.createEventTicketByReddison(eventId);
 
         return ResponseEntity
                 .created(URI.create("/events/" + response.getEventId() + "/" + response.getId()))
